@@ -1,0 +1,136 @@
+﻿<UserControl x:Name="thisPreviewControl"
+             x:Class="Dynamo.UI.Controls.PreviewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:clr="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System.Windows;assembly=PresentationCore"
+             xmlns:fwk="clr-namespace:System.Windows;assembly=PresentationFramework"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:Dynamo.Controls"
+             xmlns:ui="clr-namespace:Dynamo.UI"
+             xmlns:fa="http://schemas.fontawesome.io/icons/"
+             xmlns:uicontrols="clr-namespace:Dynamo.UI.Controls"
+             mc:Ignorable="d"  Canvas.Top="-20"
+             MouseEnter="PreviewControl_MouseEnter"
+             MouseLeave="PreviewControl_MouseLeave">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="{x:Static ui:SharedDictionaryManager.DynamoConvertersDictionaryUri}" />
+                <ResourceDictionary Source="{x:Static ui:SharedDictionaryManager.DynamoColorsAndBrushesDictionaryUri}" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <clr:Double x:Key="MinPreviewControlWidth">33.0</clr:Double>
+            <clr:Double x:Key="MinPreviewControlHeight">28.0</clr:Double>
+
+            <!-- MaxContentGrid = (MaxPreviewControl - (2 * Margin)) -->
+            <fwk:Thickness x:Key="PreviewContentMargin">12,5,5,5</fwk:Thickness>
+            <clr:Double x:Key="MaxContentGridHeight">288</clr:Double>
+            
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid Name="outerContainer"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <!-- Invisible part, where user can move mouse. 
+            It's used, because when mouse is at the edge of the node, preview starts "jumping". -->
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Invisible part. Background is set to #01000000. It's almost invisible color.
+              But with this color we can handle mouse moves.-->
+
+        <Grid Name="HiddenDummy"
+              Grid.Column="0"
+              Grid.Row="0"
+              HorizontalAlignment="Left"
+              Width="{Binding RelativeSource={RelativeSource FindAncestor, 
+                             AncestorType={x:Type controls:NodeView}}, 
+                             Path=ActualWidth}"
+              Background="#01000000" />
+
+        <Grid Grid.Column="0"
+              Grid.Row="1"
+              Name="centralizedGrid"
+              Visibility="Hidden"
+              VerticalAlignment="Top">
+            <Border Background="White"
+                    BorderThickness="1"
+                    BorderBrush="{StaticResource BubblePreviewBorderColor}" />
+            <!--bubbleTools is a pin icon which expands large preview bubble on mouse hover -->
+            <Border Name="bubbleTools"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Right"
+                    Padding="3"
+                    Visibility="Collapsed"
+                    Panel.ZIndex="1">
+                <Border BorderThickness="1"
+                            CornerRadius="4"
+                            BorderBrush="{StaticResource BubblePreviewBorderColor}"
+                            MouseLeftButtonDown="OnMapPinMouseClick">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Bottom" Margin="4,0,0,4" Text="..."
+                            Foreground="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                                 AncestorType={x:Type uicontrols:PreviewControl}}, 
+                                                 Path=StaysOpen,
+                                                 Converter={StaticResource PinIconForegroundConverter}}"/>
+
+                        <fa:ImageAwesome Name="PinnIcon" Icon="ThumbTack" Height="12" Width="9" Margin="4" 
+                            Foreground="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                                 AncestorType={x:Type uicontrols:PreviewControl}}, 
+                                                 Path=StaysOpen,
+                                                 Converter={StaticResource PinIconForegroundConverter}}"/>
+                    </StackPanel>
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Value="True" Binding="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                                          AncestorType={x:Type uicontrols:PreviewControl}}, 
+                                                          Path=StaysOpen}">
+                                    <Setter Property="Background" Value="{StaticResource PinnedIconBackgroundColor}" />
+                                </DataTrigger>
+                                <DataTrigger Value="False" Binding="{Binding Path=StaysOpen, 
+                                                            RelativeSource={RelativeSource FindAncestor, 
+                                                            AncestorType={x:Type uicontrols:PreviewControl}}}">
+                                    <Setter Property="Background"
+                                            Value="{StaticResource UnpinnedIconBackgroundColor}" />
+                                </DataTrigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background"
+                                            Value="{StaticResource PinnedIconHoverBackgroundColor}" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Border.Style>
+                </Border>
+            </Border>
+            <Grid Name="smallContentGrid"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Center"
+                  MinWidth="{Binding RelativeSource={RelativeSource FindAncestor, 
+                             AncestorType={x:Type controls:NodeView}}, 
+                             Path=ActualWidth}">
+                <uicontrols:PreviewCompactView />
+            </Grid>
+
+            <Grid Name="largeContentGrid"
+                  HorizontalAlignment="Stretch"
+                  MaxHeight="{StaticResource MaxContentGridHeight}"
+                  MinWidth="{Binding RelativeSource={RelativeSource FindAncestor, 
+                             AncestorType={x:Type controls:NodeView}}, 
+                             Path=ActualWidth}"
+                  Visibility="Collapsed">
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
