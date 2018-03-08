@@ -139,8 +139,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watch3DNodeModels", "Librar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoManipulation", "DynamoManipulation\DynamoManipulation.csproj", "{33F88E8C-CC3C-4237-8AA9-CC891EFCABFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notifications", "Notifications\Notifications.csproj", "{09F48994-BB2F-4A26-8CCD-469FE3F7F904}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryViewExtension", "LibraryViewExtension\LibraryViewExtension.csproj", "{8EACBFD1-1CD4-4519-A5FC-215D40A67204}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryColor", "Libraries\GeometryColor\GeometryColor.csproj", "{A50C198C-DA6E-4081-BC53-0F44D287F207}"
@@ -311,10 +309,6 @@ Global
 		{33F88E8C-CC3C-4237-8AA9-CC891EFCABFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F88E8C-CC3C-4237-8AA9-CC891EFCABFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F88E8C-CC3C-4237-8AA9-CC891EFCABFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09F48994-BB2F-4A26-8CCD-469FE3F7F904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09F48994-BB2F-4A26-8CCD-469FE3F7F904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09F48994-BB2F-4A26-8CCD-469FE3F7F904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09F48994-BB2F-4A26-8CCD-469FE3F7F904}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EACBFD1-1CD4-4519-A5FC-215D40A67204}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{8EACBFD1-1CD4-4519-A5FC-215D40A67204}.Debug|Any CPU.Build.0 = Debug|x64
 		{8EACBFD1-1CD4-4519-A5FC-215D40A67204}.Release|Any CPU.ActiveCfg = Release|x64
