@@ -52,10 +52,10 @@ namespace Dynamo.ViewModels
             MutateTestDelegateCommand = new DelegateCommand(MutateTestCmd, RunSettingsViewModel.CanRunExpression);
             DisplayFunctionCommand = new DelegateCommand(DisplayFunction, CanDisplayFunction);
             SetConnectorTypeCommand = new DelegateCommand(SetConnectorType, CanSetConnectorType);
-            ReportABugCommand = new DelegateCommand(ReportABug, CanReportABug);
-            GoToWikiCommand = new DelegateCommand(GoToWiki, CanGoToWiki);
+            //ReportABugCommand = new DelegateCommand(ReportABug, CanReportABug);
+            //GoToWikiCommand = new DelegateCommand(GoToWiki, CanGoToWiki);
             GoToSourceCodeCommand = new DelegateCommand(GoToSourceCode, CanGoToSourceCode);
-            GoToDictionaryCommand = new DelegateCommand(GoToDictionary, CanGoToDictionary);
+            //GoToDictionaryCommand = new DelegateCommand(GoToDictionary, CanGoToDictionary);
             DisplayStartPageCommand = new DelegateCommand(DisplayStartPage, CanDisplayStartPage);
             ChangeScaleFactorCommand = new DelegateCommand(p => OnRequestScaleFactorDialog(this, EventArgs.Empty));
             ShowPackageManagerSearchCommand = new DelegateCommand(ShowPackageManagerSearch, CanShowPackageManagerSearch);
@@ -132,9 +132,9 @@ namespace Dynamo.ViewModels
         public DelegateCommand MutateTestDelegateCommand { get; set; }
         public DelegateCommand DisplayFunctionCommand { get; set; }
         public DelegateCommand SetConnectorTypeCommand { get; set; }
-        public DelegateCommand ReportABugCommand { get; set; }
+        //public DelegateCommand ReportABugCommand { get; set; }
         public DelegateCommand GoToWikiCommand { get; set; }
-        public DelegateCommand GoToDictionaryCommand { get; set; }
+        //public DelegateCommand GoToDictionaryCommand { get; set; }
         public DelegateCommand GoToSourceCodeCommand { get; set; }
         public DelegateCommand DisplayStartPageCommand { get; set; }
         public DelegateCommand ChangeScaleFactorCommand { get; set; }
