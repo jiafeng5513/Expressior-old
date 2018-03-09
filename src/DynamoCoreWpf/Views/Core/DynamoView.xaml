@@ -749,17 +749,17 @@
                                   Header="{x:Static p:Resources.DynamoViewSettingEnableTSplineNodes}" />
                         </MenuItem>
                     </MenuItem>
-
+                    <!--menu->help-->
                     <MenuItem Header="{x:Static p:Resources.DynamoViewHelpMenu}"
                               Focusable="False">
-                        <MenuItem Focusable="False"
+                        <!--<MenuItem Focusable="False"
                                   Header="{x:Static p:Resources.StartPageWhatsNew}"
                                   Command="{Binding ShowGalleryCommand}">
                             <MenuItem.Icon>
                                 <Image Source="/DynamoCoreWpf;component/UI/Images/icon-whats-new-small.png"
                                        Width="13" Height="14" />
                             </MenuItem.Icon>
-                        </MenuItem>
+                        </MenuItem>-->
                         <MenuItem Focusable="False"
                                   Header="{x:Static p:Resources.DynamoViewHepMenuSamples}"
                                   Name="SamplesMenu"
@@ -793,7 +793,7 @@
                                   Command="{Binding ShowAboutWindowCommand}"
                                   Focusable="False" />
                     </MenuItem>
-
+                    <!--menu->debug-->
                     <MenuItem Header="{x:Static p:Resources.DynamoViewDebugMenu}"
                               Focusable="False"
                               Visibility="{Binding IsDebugBuild, Converter={StaticResource BooleanToVisibilityCollapsedConverter}}">
