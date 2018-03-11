@@ -23,3 +23,8 @@ Microsoft DirectX (install from %GitHub%\Expressior\tools\install\Extra\DirectX\
 ### 配置
 DynamoSandBox和LibraryViewExtension使用x64配置,其余使用AnyCpu配置.<br>
 启动项目是DynamoSandBox.<br>
+
+### 其他说明
+1. [Draw.io](https://www.draw.io/)<br>
+2. 由于最终目标不同,这个程序在Dynamo的基础上进行了大幅度的删改,基础版本是Dynamo的RC2.0.0分支.<br>
+3. 如果您对这个程序有兴趣,在查阅文档的时候请注意,由于2的缘故,Dynamo的文档可能并不不适用于本程序,您可以向开发者询问感兴趣的问题.<br>
