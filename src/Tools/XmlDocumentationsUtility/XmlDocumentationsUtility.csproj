@@ -70,10 +70,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Engine\ProtoAssociative\ProtoAssociative.csproj">
-      <Project>{7318d5e5-9d15-4abe-8a51-92f58d4f0b85}</Project>
-      <Name>ProtoAssociative</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Engine\ProtoCore\ProtoCore.csproj">
       <Project>{7a9e0314-966f-4584-baa3-7339cbb849d1}</Project>
       <Name>ProtoCore</Name>
