@@ -769,23 +769,9 @@
                                        Width="14" Height="14" />
                             </MenuItem.Icon>
                         </MenuItem>
-                        <!--<MenuItem Focusable="False"
-                                  Header="{x:Static p:Resources.DynamoViewHelpDictionary}"
-                                  Command="{Binding GoToDictionaryCommand}">
-                            <MenuItem.Icon>
-                                <Image Source="/DynamoCoreWpf;component/UI/Images/icon-dictionary-small.png"
-                                           Width="13" Height="14" />
-                            </MenuItem.Icon>
-                        </MenuItem>-->
-                        <!--<MenuItem Header="{x:Static p:Resources.DynamoViewHelpMenuReportBug}"
-                                  Command="{Binding ReportABugCommand}"
-                                  Focusable="False" />-->
                         <MenuItem Header="{x:Static p:Resources.DynamoViewHelpMenuGotoWebsite}"
                                   Command="{Binding GoToSourceCodeCommand}"
                                   Focusable="False" />
-                        <!--<MenuItem Header="{x:Static p:Resources.DynamoViewHelpMenuGotoWiki}"
-                                  Command="{Binding GoToWikiCommand}"
-                                  Focusable="False" />-->
                         <MenuItem Header="{x:Static p:Resources.DynamoViewHelpMenuDisplayStartPage}"
                                   Command="{Binding DisplayStartPageCommand}"
                                   Focusable="False" />
@@ -808,18 +794,6 @@
                                   Header="{x:Static p:Resources.DynamoViewDebugMenuShowDebugAST}"
                                   IsChecked="{Binding ShowDebugASTs}"></MenuItem>
                         <MenuItem Focusable="False"
-                                  Name="ForceReexec"
-                                  Header="{x:Static p:Resources.DynamoViewDebugMenuForceReExecute}"
-                                  Command="{Binding ForceRunExpressionCommand}"
-                                  CommandParameter="{Binding Path=HomeSpaceViewModel.RunSettingsViewModel.RunInDebug}"
-                                  IsEnabled="{Binding Path=HomeSpaceViewModel.RunSettingsViewModel.RunButtonEnabled}"></MenuItem>
-                        <MenuItem Focusable="False"
-                                  Name="MutateTest"
-                                  Header="{x:Static p:Resources.DynamoViewDebugMenuRunMutationTest}"
-                                  Command="{Binding MutateTestDelegateCommand}"
-                                  CommandParameter="{Binding Path=HomeSpaceViewModel.RunSettingsViewModel.RunInDebug}"
-                                  IsEnabled="{Binding Path=HomeSpaceViewModel.RunSettingsViewModel.RunButtonEnabled}"></MenuItem>
-                        <MenuItem Focusable="False"
                                   Name="CheckDailyBuilds"
                                   Header="{x:Static p:Resources.DynamoViewDebugMenuCheckDailyBuild}"
                                   DataContext="{Binding Path=Model.UpdateManager}"
@@ -831,10 +805,6 @@
                                   DataContext="{Binding Path=Model.UpdateManager}"
                                   IsCheckable="True"
                                   IsChecked="{Binding Path=ForceUpdate, Mode=TwoWay}" />
-                        <MenuItem Focusable="False"
-                                  Header="{x:Static p:Resources.DynamoViewDebugMenuDumpLibrary}"
-                                  Command="{Binding DumpLibraryToXmlCommand}"
-                                  IsEnabled="True" />
                     </MenuItem>
                 </Menu>
 

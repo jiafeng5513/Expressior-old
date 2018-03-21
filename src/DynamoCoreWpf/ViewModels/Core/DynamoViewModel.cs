@@ -759,18 +759,6 @@ namespace Dynamo.ViewModels
             CurrentSpaceViewModel.CancelActiveState();
         }
 
-        internal void ForceRunExprCmd(object parameters)
-        {
-            bool displayErrors = Convert.ToBoolean(parameters);
-            var command = new DynamoModel.ForceRunCancelCommand(displayErrors, false);
-            this.ExecuteCommand(command);
-        }
-
-        internal void MutateTestCmd(object parameters)
-        {
-            var command = new DynamoModel.MutateTestCommand();
-            this.ExecuteCommand(command);
-        }
 
         public void DisplayFunction(object parameters)
         {
@@ -781,16 +769,6 @@ namespace Dynamo.ViewModels
         {
             return Model.CustomNodeManager.Contains((Guid)parameters);
         }
-
-        //public static void ReportABug(object parameter)
-        //{
-        //    Process.Start(new ProcessStartInfo("explorer.exe", Configurations.GitHubBugReportingLink));
-        //}
-
-        //public static void ReportABug()
-        //{
-        //    ReportABug(null);
-        //}
 
         internal static void DownloadDynamo()
         {
