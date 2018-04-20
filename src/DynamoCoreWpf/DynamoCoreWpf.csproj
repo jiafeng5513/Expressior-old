@@ -290,9 +290,6 @@
     <Compile Include="UI\Prompts\NodeHelpPrompt.xaml.cs">
       <DependentUpon>NodeHelpPrompt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Prompts\UsageReportingAgreementPrompt.xaml.cs">
-      <DependentUpon>UsageReportingAgreementPrompt.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Prompts\ChangeScaleFactorPrompt.xaml.cs">
       <DependentUpon>ChangeScaleFactorPrompt.xaml</DependentUpon>
     </Compile>
@@ -1020,10 +1017,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="UI\Prompts\PresetOverwritePrompt.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="UI\Prompts\UsageReportingAgreementPrompt.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
