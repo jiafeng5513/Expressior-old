@@ -10,7 +10,6 @@ using Dynamo.Interfaces;
 using Dynamo.Models;
 using Dynamo.PackageManager;
 using Dynamo.Selection;
-//using Dynamo.Services;
 using Dynamo.UI;
 using Dynamo.Updates;
 using Dynamo.Utilities;
@@ -804,16 +803,6 @@ namespace Dynamo.ViewModels
             PerformShutdownSequence(new ShutdownParams(
                 shutdownHost: true, allowCancellation: true));
         }
-
-        //void CollectInfoManager_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    switch (e.PropertyName)
-        //    {
-        //        case "CollectInfoOption":
-        //            RaisePropertyChanged("CollectInfoOption");
-        //            break;
-        //    }
-        //}
 
         private void SelectionOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
         {
@@ -2076,16 +2065,6 @@ namespace Dynamo.ViewModels
             return true;
         }
 
-        //public void GoToWiki(object parameter)
-        //{
-        //    Process.Start(new ProcessStartInfo("explorer.exe", Configurations.DynamoWikiLink));
-        //}
-
-        //internal bool CanGoToWiki(object parameter)
-        //{
-        //    return true;
-        //}
-
         public void GoToSourceCode(object parameter)
         {
             Process.Start(new ProcessStartInfo("explorer.exe", Configurations.GitHubDynamoLink));
@@ -2096,15 +2075,6 @@ namespace Dynamo.ViewModels
             return true;
         }
 
-        //public void GoToDictionary(object parameter)
-        //{
-        //    Process.Start(new ProcessStartInfo("explorer.exe", Configurations.DynamoDictionary));
-        //}
-
-        //internal bool CanGoToDictionary(object parameter)
-        //{
-        //    return true;
-        //}
 
         private void DisplayStartPage(object parameter)
         {
