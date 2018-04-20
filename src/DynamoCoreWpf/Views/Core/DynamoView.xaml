@@ -5,7 +5,6 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:controls="clr-namespace:Dynamo.Controls"
         xmlns:uictrls="clr-namespace:Dynamo.UI.Controls"
-        xmlns:service="clr-namespace:Dynamo.Services"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:viewModels="clr-namespace:Dynamo.ViewModels"
