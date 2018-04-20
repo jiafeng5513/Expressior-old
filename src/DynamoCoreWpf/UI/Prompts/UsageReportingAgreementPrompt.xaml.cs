@@ -36,31 +36,31 @@ namespace Dynamo.UI.Prompts
             AcceptUsageReportingTextBlock.Text =
                 string.Format(Wpf.Properties.Resources.ConsentFormInstrumentationCheckBoxContent,
                     dynamoViewModel.BrandingResourceProvider.ProductName);
-            AcceptUsageReportingCheck.IsChecked = UsageReportingManager.Instance.IsUsageReportingApproved;
-            AcceptAnalyticsReportingCheck.IsChecked = UsageReportingManager.Instance.IsAnalyticsReportingApproved;
+            //AcceptUsageReportingCheck.IsChecked = UsageReportingManager.Instance.IsUsageReportingApproved;
+            //AcceptAnalyticsReportingCheck.IsChecked = UsageReportingManager.Instance.IsAnalyticsReportingApproved;
 
         }
 
         private void ToggleIsUsageReportingChecked(object sender, RoutedEventArgs e)
         {
-            UsageReportingManager.Instance.SetUsageReportingAgreement(
-                AcceptUsageReportingCheck.IsChecked.HasValue && 
-                AcceptUsageReportingCheck.IsChecked.Value);
+            //UsageReportingManager.Instance.SetUsageReportingAgreement(
+            //    AcceptUsageReportingCheck.IsChecked.HasValue && 
+            //    AcceptUsageReportingCheck.IsChecked.Value);
         }
 
         private void ToggleIsAnalyticsReportingChecked(object sender, RoutedEventArgs e)
         {
-            UsageReportingManager.Instance.SetAnalyticsReportingAgreement(
-                AcceptAnalyticsReportingCheck.IsChecked.HasValue && 
-                AcceptAnalyticsReportingCheck.IsChecked.Value);
+            //UsageReportingManager.Instance.SetAnalyticsReportingAgreement(
+            //    AcceptAnalyticsReportingCheck.IsChecked.HasValue && 
+            //    AcceptAnalyticsReportingCheck.IsChecked.Value);
         }
 
         private void OnContinueClick(object sender, RoutedEventArgs e)
         {
             // Update user agreement
-            UsageReportingManager.Instance.SetUsageReportingAgreement(AcceptUsageReportingCheck.IsChecked.Value);
-            UsageReportingManager.Instance.SetAnalyticsReportingAgreement(AcceptAnalyticsReportingCheck.IsChecked.Value);
-            Close();
+            //UsageReportingManager.Instance.SetUsageReportingAgreement(AcceptUsageReportingCheck.IsChecked.Value);
+            //UsageReportingManager.Instance.SetAnalyticsReportingAgreement(AcceptAnalyticsReportingCheck.IsChecked.Value);
+            //Close();
         }
 
         private void OnLearnMoreClick(object sender, RoutedEventArgs e)

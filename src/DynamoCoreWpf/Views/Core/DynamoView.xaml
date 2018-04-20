@@ -646,7 +646,7 @@
                               Focusable="False"
                               IsEnabled="True"
                               SubmenuOpened="OnSettingsSubMenuOpened">
-                        <MenuItem Header="{x:Static p:Resources.DynamoViewSettingMenuEnableSummaryReporting}"
+                        <!--<MenuItem Header="{x:Static p:Resources.DynamoViewSettingMenuEnableSummaryReporting}"
                                   Name="ToggleIsAnalyticsReportingApprovedCommand"
                                   Command="{Binding Path=ToggleIsAnalyticsReportingApprovedCommand, Source={x:Static service:UsageReportingManager.Instance} }"
                                   CommandParameter="{Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type controls:DynamoView}}}"
@@ -660,7 +660,7 @@
                                   IsChecked="{Binding Path=IsUsageReportingApproved, Mode=OneWay, Source={x:Static service:UsageReportingManager.Instance} }"
                                   ToolTip="{x:Static p:Resources.DynamoViewSettingMenuEnableDataReportingTooltip}"
                                   Focusable="False" />
-                        <Separator />
+                        <Separator />-->
                         <MenuItem Focusable="False" 
                                   Name="ShowNodeExecution" 
                                   IsCheckable="True" 

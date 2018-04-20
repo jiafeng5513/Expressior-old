@@ -391,7 +391,7 @@ namespace Dynamo.Models
             ShutDownCore(shutdownHost);
             PostShutdownCore(shutdownHost);
 
-            AnalyticsService.ShutDown();
+            //AnalyticsService.ShutDown();
 
             OnShutdownCompleted(); // Notify possible event handlers.
         }
@@ -546,7 +546,7 @@ namespace Dynamo.Models
                 PreferenceSettings.PropertyChanged += PreferenceSettings_PropertyChanged;
             }
 
-            InitializeInstrumentationLogger();
+            //InitializeInstrumentationLogger();
 
             if (!IsTestMode && PreferenceSettings.IsFirstRun)
             {
@@ -1081,13 +1081,13 @@ namespace Dynamo.Models
             }
         }
 
-        private void InitializeInstrumentationLogger()
-        {
-            if (!IsTestMode && !IsHeadless)
-            {
-                AnalyticsService.Start(this);
-            }
-        }
+        //private void InitializeInstrumentationLogger()
+        //{
+        //    if (!IsTestMode && !IsHeadless)
+        //    {
+        //        AnalyticsService.Start(this);
+        //    }
+        //}
 
         private IPreferences CreateOrLoadPreferences(IPreferences preferences)
         {

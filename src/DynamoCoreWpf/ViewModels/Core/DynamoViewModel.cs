@@ -334,13 +334,13 @@ namespace Dynamo.ViewModels
             }
         }
 
-        public bool IsUsageReportingApproved
-        {
-            get
-            {
-                return UsageReportingManager.Instance.IsUsageReportingApproved;
-            }
-        }
+        //public bool IsUsageReportingApproved
+        //{
+        //    get
+        //    {
+        //        return UsageReportingManager.Instance.IsUsageReportingApproved;
+        //    }
+        //}
 
         private ObservableCollection<string> recentFiles =
             new ObservableCollection<string>();
@@ -511,7 +511,7 @@ namespace Dynamo.ViewModels
             this.model.CommandStarting += OnModelCommandStarting;
             this.model.CommandCompleted += OnModelCommandCompleted;
 
-            UsageReportingManager.Instance.InitializeCore(this);
+            //UsageReportingManager.Instance.InitializeCore(this);
             this.WatchHandler = startConfiguration.WatchHandler;
             var pmExtension = model.GetPackageManagerExtension();
             this.PackageManagerClientViewModel = new PackageManagerClientViewModel(this, pmExtension.PackageManagerClient);
@@ -547,7 +547,7 @@ namespace Dynamo.ViewModels
 
             InitializeRecentFiles();
 
-            UsageReportingManager.Instance.PropertyChanged += CollectInfoManager_PropertyChanged;
+            //UsageReportingManager.Instance.PropertyChanged += CollectInfoManager_PropertyChanged;
 
             WatchIsResizable = false;
 
@@ -635,7 +635,7 @@ namespace Dynamo.ViewModels
             model.WorkspaceAdded -= WorkspaceAdded;
             model.WorkspaceRemoved -= WorkspaceRemoved;
             DynamoSelection.Instance.Selection.CollectionChanged -= SelectionOnCollectionChanged;
-            UsageReportingManager.Instance.PropertyChanged -= CollectInfoManager_PropertyChanged;
+            //UsageReportingManager.Instance.PropertyChanged -= CollectInfoManager_PropertyChanged;
         }
 
         private void InitializeRecentFiles()
@@ -805,15 +805,15 @@ namespace Dynamo.ViewModels
                 shutdownHost: true, allowCancellation: true));
         }
 
-        void CollectInfoManager_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            switch (e.PropertyName)
-            {
-                case "CollectInfoOption":
-                    RaisePropertyChanged("CollectInfoOption");
-                    break;
-            }
-        }
+        //void CollectInfoManager_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        //{
+        //    switch (e.PropertyName)
+        //    {
+        //        case "CollectInfoOption":
+        //            RaisePropertyChanged("CollectInfoOption");
+        //            break;
+        //    }
+        //}
 
         private void SelectionOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
         {
@@ -2405,7 +2405,7 @@ namespace Dynamo.ViewModels
                 model.UpdateManager.HostApplicationBeginQuit();
             }
 
-            UsageReportingManager.DestroyInstance();
+            //UsageReportingManager.DestroyInstance();
 
             return true;
         }
