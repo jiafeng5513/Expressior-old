@@ -792,17 +792,17 @@ namespace Dynamo.ViewModels
             return true;
         }
 
-        void Instance_UpdateDownloaded(object sender, UpdateDownloadedEventArgs e)
-        {
-            RaisePropertyChanged("Version");
-            RaisePropertyChanged("IsUpdateAvailable");
-        }
+        //void Instance_UpdateDownloaded(object sender, UpdateDownloadedEventArgs e)
+        //{
+        //    RaisePropertyChanged("Version");
+        //    RaisePropertyChanged("IsUpdateAvailable");
+        //}
 
-        void UpdateManager_ShutdownRequested(IUpdateManager updateManager)
-        {
-            PerformShutdownSequence(new ShutdownParams(
-                shutdownHost: true, allowCancellation: true));
-        }
+        //void UpdateManager_ShutdownRequested(IUpdateManager updateManager)
+        //{
+        //    PerformShutdownSequence(new ShutdownParams(
+        //        shutdownHost: true, allowCancellation: true));
+        //}
 
         private void SelectionOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
         {
