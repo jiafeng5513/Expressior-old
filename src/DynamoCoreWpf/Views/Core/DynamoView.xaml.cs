@@ -335,11 +335,14 @@ namespace Dynamo.Controls
                 loginGrid.Children.Add(login);
             }
         }
-
+        /// <summary>
+        /// 主页上的工具条是编码实现的,在xaml中仅有一个占位符
+        /// </summary>
         private void InitializeShortcutBar()
         {
             //shortcutBar = new ShortcutToolbar(this.dynamoViewModel.Model.UpdateManager) {Name = "ShortcutToolbar"};
             shortcutBar = new ShortcutToolbar() { Name = "ShortcutToolbar" };
+            //ShortcutToolbar对应的是一个xaml定义的窗口子部件
 
             var newScriptButton = new ShortcutBarItem
             {

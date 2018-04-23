@@ -37,14 +37,14 @@ namespace Dynamo.UI.Controls
         /// Construct a ShortcutToolbar.
         /// </summary>
         /// <param name="updateManager"></param>
-        public ShortcutToolbar(IUpdateManager updateManager)
-        {
-            shortcutBarItems = new ObservableCollection<ShortcutBarItem>();
-            shortcutBarRightSideItems = new ObservableCollection<ShortcutBarItem>();    
+        //public ShortcutToolbar(IUpdateManager updateManager)
+        //{
+        //    shortcutBarItems = new ObservableCollection<ShortcutBarItem>();
+        //    shortcutBarRightSideItems = new ObservableCollection<ShortcutBarItem>();    
 
-            InitializeComponent();
-            UpdateControl.DataContext = updateManager;
-        }
+        //    InitializeComponent();
+        //    UpdateControl.DataContext = updateManager;
+        //}
 
         public ShortcutToolbar()
         {
