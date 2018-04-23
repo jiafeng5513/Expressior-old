@@ -215,7 +215,7 @@ namespace Dynamo.Models
         /// <summary>
         /// UpdateManager to handle automatic upgrade to higher version.
         /// </summary>
-        public IUpdateManager UpdateManager { get; private set; }
+        //public IUpdateManager UpdateManager { get; private set; }
 
         /// <summary>
         ///     The path manager that configures path information required for
@@ -627,7 +627,7 @@ namespace Dynamo.Models
 
             AuthenticationManager = new AuthenticationManager(config.AuthProvider);
 
-            UpdateManager = config.UpdateManager ?? new DefaultUpdateManager(null);
+            //UpdateManager = config.UpdateManager ?? new DefaultUpdateManager(null);
 
             // config.UpdateManager has to be cast to IHostUpdateManager in order to extract the HostVersion and HostName
             // see IHostUpdateManager summary for more details 
@@ -644,11 +644,11 @@ namespace Dynamo.Models
                 HostVersion = null;
             }
             
-            UpdateManager.Log += UpdateManager_Log;
-            if (!IsTestMode && !IsHeadless)
-            {
-                DefaultUpdateManager.CheckForProductUpdate(UpdateManager);
-            }
+            //UpdateManager.Log += UpdateManager_Log;
+            //if (!IsTestMode && !IsHeadless)
+            //{
+            //    DefaultUpdateManager.CheckForProductUpdate(UpdateManager);
+            //}
 
             Logger.Log(string.Format("Dynamo -- Build {0}",
                                         Assembly.GetExecutingAssembly().GetName().Version));
@@ -867,7 +867,7 @@ namespace Dynamo.Models
             LibraryServices.Dispose();
             LibraryServices.LibraryManagementCore.Cleanup();
 
-            UpdateManager.Log -= UpdateManager_Log;
+            //UpdateManager.Log -= UpdateManager_Log;
             Logger.Dispose();
 
             EngineController.Dispose();

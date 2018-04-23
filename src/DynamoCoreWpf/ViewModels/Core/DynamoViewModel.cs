@@ -370,14 +370,14 @@ namespace Dynamo.ViewModels
             get { return model.HostName; }
         }
 
-        public bool IsUpdateAvailable
-        {
-            get
-            {
-                var um = model.UpdateManager;
-                return um.IsUpdateAvailable;
-            }
-        }
+        //public bool IsUpdateAvailable
+        //{
+        //    get
+        //    {
+        //        var um = model.UpdateManager;
+        //        return um.IsUpdateAvailable;
+        //    }
+        //}
 
         public string LicenseFile
         {
@@ -536,7 +536,7 @@ namespace Dynamo.ViewModels
             SubscribeModelCleaningUpEvent();
             SubscribeModelUiEvents();
             SubscribeModelChangedHandlers();
-            SubscribeUpdateManagerHandlers();
+            //SubscribeUpdateManagerHandlers();
 
             InitializeAutomationSettings(startConfiguration.CommandFilePath);
 
@@ -627,7 +627,7 @@ namespace Dynamo.ViewModels
             UnsubscribeDispatcherEvents();
             UnsubscribeModelUiEvents();
             UnsubscribeModelChangedEvents();
-            UnsubscribeUpdateManagerEvents();
+            //UnsubscribeUpdateManagerEvents();
             UnsubscribeLoggerEvents();
             UnsubscribeModelCleaningUpEvent();
 
@@ -656,17 +656,17 @@ namespace Dynamo.ViewModels
             model.Logger.PropertyChanged -= Instance_PropertyChanged;
         }
 
-        private void SubscribeUpdateManagerHandlers()
-        {
-            model.UpdateManager.UpdateDownloaded += Instance_UpdateDownloaded;
-            model.UpdateManager.ShutdownRequested += UpdateManager_ShutdownRequested;
-        }
+        //private void SubscribeUpdateManagerHandlers()
+        //{
+        //    model.UpdateManager.UpdateDownloaded += Instance_UpdateDownloaded;
+        //    model.UpdateManager.ShutdownRequested += UpdateManager_ShutdownRequested;
+        //}
 
-        private void UnsubscribeUpdateManagerEvents()
-        {
-            model.UpdateManager.UpdateDownloaded -= Instance_UpdateDownloaded;
-            model.UpdateManager.ShutdownRequested -= UpdateManager_ShutdownRequested;
-        }
+        //private void UnsubscribeUpdateManagerEvents()
+        //{
+        //    model.UpdateManager.UpdateDownloaded -= Instance_UpdateDownloaded;
+        //    model.UpdateManager.ShutdownRequested -= UpdateManager_ShutdownRequested;
+        //}
 
         private void SubscribeModelUiEvents()
         {
@@ -2370,10 +2370,10 @@ namespace Dynamo.ViewModels
             BackgroundPreviewViewModel.Dispose();
 
             model.ShutDown(shutdownParams.ShutdownHost);
-            if (shutdownParams.ShutdownHost)
-            {
-                model.UpdateManager.HostApplicationBeginQuit();
-            }
+            //if (shutdownParams.ShutdownHost)
+            //{
+            //    model.UpdateManager.HostApplicationBeginQuit();
+            //}
 
             //UsageReportingManager.DestroyInstance();
 
