@@ -359,9 +359,6 @@
     <Compile Include="Views\Preview\InfoBubbleView.xaml.cs">
       <DependentUpon>InfoBubbleView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PackageManager\InstalledPackagesView.xaml.cs">
-      <DependentUpon>InstalledPackagesView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Search\LibraryView.xaml.cs">
       <DependentUpon>LibraryView.xaml</DependentUpon>
     </Compile>
@@ -371,14 +368,8 @@
     <Compile Include="Views\Core\NoteView.xaml.cs">
       <DependentUpon>NoteView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PackageManager\PackageManagerSearchView.xaml.cs">
-      <DependentUpon>PackageManagerSearchView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Preview\PreviewControl.xaml.cs">
       <DependentUpon>PreviewControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PackageManager\PublishPackageView.xaml.cs">
-      <DependentUpon>PublishPackageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\TooltipWindow.xaml.cs">
       <DependentUpon>TooltipWindow.xaml</DependentUpon>
@@ -1138,12 +1129,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\PackageManager\InstalledPackagesView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Views\Search\LibraryView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1159,22 +1144,12 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\PackageManager\PackageManagerSearchView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Views\Preview\PreviewControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\PackageManager\PublishPackageView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Controls\TooltipWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

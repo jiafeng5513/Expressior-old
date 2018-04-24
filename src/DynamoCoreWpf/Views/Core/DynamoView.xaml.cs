@@ -507,9 +507,7 @@ namespace Dynamo.Controls
 
             #region Package manager
 
-            dynamoViewModel.RequestPackagePublishDialog += DynamoViewModelRequestRequestPackageManagerPublish;
-            dynamoViewModel.RequestManagePackagesDialog += DynamoViewModelRequestShowInstalledPackages;
-            dynamoViewModel.RequestPackageManagerSearchDialog += DynamoViewModelRequestShowPackageManagerSearch;
+            //dynamoViewModel.RequestPackagePublishDialog += DynamoViewModelRequestRequestPackageManagerPublish;
             dynamoViewModel.RequestPackagePathsDialog += DynamoViewModelRequestPackagePaths;
             dynamoViewModel.RequestScaleFactorDialog += DynamoViewModelChangeScaleFactor;
 
@@ -546,10 +544,6 @@ namespace Dynamo.Controls
 
             //ABOUT WINDOW
             dynamoViewModel.RequestAboutWindow += DynamoViewModelRequestAboutWindow;
-
-            //SHOW or HIDE GALLERY
-            //dynamoViewModel.RequestShowHideGallery += DynamoViewModelRequestShowHideGallery;
-
             LoadNodeViewCustomizations();
             SubscribeNodeViewCustomizationEvents();
 
@@ -659,58 +653,28 @@ namespace Dynamo.Controls
             e.Handled = true;
         }
 
-        private PublishPackageView _pubPkgView;
+        //private PublishPackageView _pubPkgView;
 
-        private void DynamoViewModelRequestRequestPackageManagerPublish(PublishPackageViewModel model)
-        {
-            var cmd = Analytics.TrackCommandEvent("PublishPackage");
-            if (_pubPkgView == null)
-            {
-                _pubPkgView = new PublishPackageView(model)
-                {
-                    Owner = this,
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner
-                };
-                _pubPkgView.Closed += (sender, args) => { _pubPkgView = null; cmd.Dispose(); };
-                _pubPkgView.Show();
+        //private void DynamoViewModelRequestRequestPackageManagerPublish(PublishPackageViewModel model)
+        //{
+        //    var cmd = Analytics.TrackCommandEvent("PublishPackage");
+        //    if (_pubPkgView == null)
+        //    {
+        //        _pubPkgView = new PublishPackageView(model)
+        //        {
+        //            Owner = this,
+        //            WindowStartupLocation = WindowStartupLocation.CenterOwner
+        //        };
+        //        _pubPkgView.Closed += (sender, args) => { _pubPkgView = null; cmd.Dispose(); };
+        //        _pubPkgView.Show();
 
-                if (_pubPkgView.IsLoaded && IsLoaded) _pubPkgView.Owner = this;
-            }
+        //        if (_pubPkgView.IsLoaded && IsLoaded) _pubPkgView.Owner = this;
+        //    }
 
-            _pubPkgView.Focus();
-        }
+        //    _pubPkgView.Focus();
+        //}
 
-        private PackageManagerSearchView _searchPkgsView;
         private PackageManagerSearchViewModel _pkgSearchVM;
-
-        private void DynamoViewModelRequestShowPackageManagerSearch(object s, EventArgs e)
-        {
-            if (!DisplayTermsOfUseForAcceptance())
-                return; // Terms of use not accepted.
-
-            var cmd = Analytics.TrackCommandEvent("SearchPackage");
-            if (_pkgSearchVM == null)
-            {
-                _pkgSearchVM = new PackageManagerSearchViewModel(dynamoViewModel.PackageManagerClientViewModel);
-            }
-
-            if (_searchPkgsView == null)
-            {
-                _searchPkgsView = new PackageManagerSearchView(_pkgSearchVM)
-                {
-                    Owner = this,
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner
-                };
-
-                _searchPkgsView.Closed += (sender, args) => { _searchPkgsView = null; cmd.Dispose(); };
-                _searchPkgsView.Show();
-
-                if (_searchPkgsView.IsLoaded && IsLoaded) _searchPkgsView.Owner = this;
-            }
-
-            _searchPkgsView.Focus();
-            _pkgSearchVM.RefreshAndSearchAsync();
-        }
 
         private void DynamoViewModelRequestPackagePaths(object sender, EventArgs e)
         {
@@ -744,28 +708,6 @@ namespace Dynamo.Controls
             }
         }
 
-        private InstalledPackagesView _installedPkgsView;
-
-        private void DynamoViewModelRequestShowInstalledPackages(object s, EventArgs e)
-        {
-            var cmd = Analytics.TrackCommandEvent("ManagePackage");
-            if (_installedPkgsView == null)
-            {
-                var pmExtension = dynamoViewModel.Model.GetPackageManagerExtension();
-                _installedPkgsView = new InstalledPackagesView(new InstalledPackagesViewModel(dynamoViewModel,
-                    pmExtension.PackageLoader))
-                {
-                    Owner = this,
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner
-                };
-
-                _installedPkgsView.Closed += (sender, args) => { _installedPkgsView = null; cmd.Dispose(); };
-                _installedPkgsView.Show();
-
-                if (_installedPkgsView.IsLoaded && IsLoaded) _installedPkgsView.Owner = this;
-            }
-            _installedPkgsView.Focus();
-        }
 
         private void ClipBoard_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
@@ -1071,9 +1013,7 @@ namespace Dynamo.Controls
             dynamoViewModel.RequestViewOperation -= DynamoViewModelRequestViewOperation;
 
             //PACKAGE MANAGER
-            dynamoViewModel.RequestPackagePublishDialog -= DynamoViewModelRequestRequestPackageManagerPublish;
-            dynamoViewModel.RequestManagePackagesDialog -= DynamoViewModelRequestShowInstalledPackages;
-            dynamoViewModel.RequestPackageManagerSearchDialog -= DynamoViewModelRequestShowPackageManagerSearch;
+            //dynamoViewModel.RequestPackagePublishDialog -= DynamoViewModelRequestRequestPackageManagerPublish;
             dynamoViewModel.RequestPackagePathsDialog -= DynamoViewModelRequestPackagePaths;
 
             //FUNCTION NAME PROMPT
@@ -1100,10 +1040,6 @@ namespace Dynamo.Controls
 
             //ABOUT WINDOW
             dynamoViewModel.RequestAboutWindow -= DynamoViewModelRequestAboutWindow;
-
-            //SHOW or HIDE GALLERY
-            //dynamoViewModel.RequestShowHideGallery -= DynamoViewModelRequestShowHideGallery;
-
             foreach (var ext in viewExtensionManager.ViewExtensions)
             {
                 try
